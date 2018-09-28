@@ -25,7 +25,8 @@ pipeline {
         }
         stage('Upload draftset') {
             steps {
-                error 'Still to determine how to split things up.'
+                uploadTidy(['out/entry_visas.csv'],
+                           'https://github.com/ONS-OpenData/ref_migration/raw/master/columns.csv')
             }
         }
         stage('Publish') {
