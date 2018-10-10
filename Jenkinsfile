@@ -20,7 +20,7 @@ pipeline {
                 }
             }
             steps {
-                sh "jupyter-nbconvert --to python --stdout 'main.ipynb' | ipython"
+                sh "jupyter-nbconvert --output-dir=out --execute 'main.ipynb'"
             }
         }
         stage('Upload draftset') {
