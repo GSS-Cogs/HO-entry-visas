@@ -25,9 +25,11 @@ pipeline {
         }
         stage('Upload draftset') {
             steps {
-                jobDraft.replace()
-                uploadTidy(['out/entry_visas.csv'],
-                           'https://github.com/ONS-OpenData/ref_migration/raw/master/columns.csv')
+                script {
+                    jobDraft.replace()
+                    uploadTidy(['out/entry_visas.csv'],
+                               'https://github.com/ONS-OpenData/ref_migration/raw/master/columns.csv')
+                }
             }
         }
         stage('Publish') {
