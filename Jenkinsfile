@@ -32,7 +32,7 @@ pipeline {
             }
             steps {
                 script {
-                    sh "csvlint -s https://github.com/ONS-OpenData/ref_migration/raw/master/codelist-schema.json out/ho-applicant-categories.csv"
+                    sh "csvlint -s https://github.com/ONS-OpenData/ref_migration/raw/master/codelist-schema.json out/ho-application-categories.csv"
                     sh "csvlint -s https://github.com/ONS-OpenData/ref_migration/raw/master/codelist-schema.json out/ho-countries..csv"
                 }
             }
@@ -41,7 +41,7 @@ pipeline {
             steps {
                 script {
                     jobDraft.replace()
-                    uploadCodelist('out/ho-applicant-categories.csv', 'HO Applicant Category')
+                    uploadCodelist('out/ho-application-categories.csv', 'HO Application Category')
                     uploadCodelist('out/ho-countries.csv', 'HO Citizenship')
                     uploadTidy(['out/entry_visas.csv'],
                                'https://github.com/ONS-OpenData/ref_migration/raw/master/columns.csv')
