@@ -23,6 +23,20 @@ pipeline {
                 sh "jupyter-nbconvert --output-dir=out --ExecutePreprocessor.timeout=None --execute 'main.ipynb'"
             }
         }
+        stage('Test') {
+            agent {
+                docker {
+                    image 'cloudfluff/csvlint'
+                    reuseNode true
+                }
+            }
+            steps {
+                script {
+                    sh "csvlint -s https://github.com/ONS-OpenData/ref_migration/raw/master/codelist-schema.json out/ho-application-categories.csv"
+                    sh "csvlint -s https://github.com/ONS-OpenData/ref_migration/raw/master/codelist-schema.json out/ho-countries..csv"
+                }
+            }
+        }
         stage('Upload draftset') {
             steps {
                 script {
