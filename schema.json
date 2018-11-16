@@ -1,0 +1,77 @@
+{
+  "@context": ["http://www.w3.org/ns/csvw", {"@language": "en"}],
+  "tables": [
+    {
+      "url": "https://ons-opendata.github.io/ref_migration/codelists/ho-applicant-types.csv",
+      "tableSchema": "https://ons-opendata.github.io/ref_migration/codelist-schema.json"
+    }, {
+      "url": "out/ho-application-categories.csv",
+      "tableSchema": "https://ons-opendata.github.io/ref_migration/codelist-schema.json"
+    }, {
+      "url": "out/ho-countries.csv",
+      "tableSchema": "https://ons-opendata.github.io/ref_migration/codelist-schema.json"
+    }, {
+      "url": "https://ons-opendata.github.io/ref_migration/codelists/ho-application-resolution.csv",
+      "tableSchema": "https://ons-opendata.github.io/ref_migration/codelist-schema.json"
+    }, {
+      "url": "out/entry_visas.csv",
+      "tableSchema": {
+        "columns": [{
+          "titles": "Applicant type",
+          "name": "applicantType",
+          "required": true
+        }, {
+          "titles": "Application category",
+          "name": "applicationCategory",
+          "required": true
+        }, {
+          "titles": "Application type",
+          "required": true
+        }, {
+          "titles": "Country of nationality",
+          "name": "country",
+          "required": true
+        }, {
+          "titles": "Period",
+          "datatype": {
+            "base": "string",
+            "format": "year/[0-9]{4}|quarter/[0-9]{4}-Q[1-4]"
+          }
+        }, {
+          "titles": "Resolution",
+          "name": "resolution",
+          "required": true
+        }, {
+          "titles": "Value",
+          "datatype": "integer",
+          "required": true
+        }, {
+          "titles": "Measure Type",
+          "datatype": {
+            "format": "Count"
+          }
+        }, {
+          "titles": "Unit",
+          "datatype": {
+            "base": "string",
+            "format": "Applications"
+          },
+          "required": true
+        }],
+        "foreignKeys": [{
+          "columnReference": "applicantType",
+          "reference": {
+            "resource": "https://ons-opendata.github.io/ref_migration/codelists/ho-applicant-types.csv",
+            "columnReference": "label"
+          }
+        }, {
+          "columnReference": "applicationCategory",
+          "reference": {
+            "resource": "out/ho-application-categories.csv",
+            "columnReference": "label"
+          }
+        }]
+      }
+    }
+  ]
+}
