@@ -1,76 +1,117 @@
 {
-  "@context": ["http://www.w3.org/ns/csvw", {"@language": "en"}],
+  "@context": [
+    "http://www.w3.org/ns/csvw",
+    {
+      "@language": "en"
+    }
+  ],
   "tables": [
     {
       "url": "https://ons-opendata.github.io/ref_migration/codelists/ho-applicant-types.csv",
-      "tableSchema": "https://ons-opendata.github.io/ref_migration/codelist-schema.json"
-    }, {
-      "url": "out/ho-application-categories.csv",
-      "tableSchema": "https://ons-opendata.github.io/ref_migration/codelist-schema.json"
-    }, {
-      "url": "out/ho-countries.csv",
-      "tableSchema": "https://ons-opendata.github.io/ref_migration/codelist-schema.json"
-    }, {
+      "tableSchema": "https://ons-opendata.github.io/ref_common/codelist-schema.json"
+    },
+    {
+      "url": "https://ons-opendata.github.io/ref_migration/codelists/ho-application-types.csv",
+      "tableSchema": "https://ons-opendata.github.io/ref_common/codelist-schema.json"
+    },
+    {
+      "url": "https://ons-opendata.github.io/ref_migration/codelists/ho-country-of-nationality.csv",
+      "tableSchema": "https://ons-opendata.github.io/ref_common/codelist-schema.json"
+    },
+    {
       "url": "https://ons-opendata.github.io/ref_migration/codelists/ho-application-resolution.csv",
-      "tableSchema": "https://ons-opendata.github.io/ref_migration/codelist-schema.json"
-    }, {
-      "url": "out/entry_visas.csv",
+      "tableSchema": "https://ons-opendata.github.io/ref_common/codelist-schema.json"
+    },
+    {
+      "url": "out/observations.csv",
       "tableSchema": {
-        "columns": [{
-          "titles": "Applicant type",
-          "name": "applicantType",
-          "required": true
-        }, {
-          "titles": "Application category",
-          "name": "applicationCategory",
-          "required": true
-        }, {
-          "titles": "Application type",
-          "required": true
-        }, {
-          "titles": "Country of nationality",
-          "name": "country",
-          "required": true
-        }, {
-          "titles": "Period",
-          "datatype": {
-            "base": "string",
-            "format": "year/[0-9]{4}|quarter/[0-9]{4}-Q[1-4]"
-          }
-        }, {
-          "titles": "Resolution",
-          "name": "resolution",
-          "required": true
-        }, {
-          "titles": "Value",
-          "datatype": "integer",
-          "required": true
-        }, {
-          "titles": "Measure Type",
-          "datatype": {
-            "format": "Count"
-          }
-        }, {
-          "titles": "Unit",
-          "datatype": {
-            "base": "string",
-            "format": "Applications"
+        "columns": [
+          {
+            "titles": "Applicant type",
+            "required": true,
+            "name": "applicant_type"
           },
-          "required": true
-        }],
-        "foreignKeys": [{
-          "columnReference": "applicantType",
-          "reference": {
-            "resource": "https://ons-opendata.github.io/ref_migration/codelists/ho-applicant-types.csv",
-            "columnReference": "label"
+          {
+            "titles": "Application category",
+            "required": true,
+            "name": "application_category"
+          },
+          {
+            "titles": "Application type",
+            "required": true,
+            "name": "application_type"
+          },
+          {
+            "titles": "HO Country of Nationality",
+            "required": true,
+            "name": "ho_country_of_nationality"
+          },
+          {
+            "titles": "Period",
+            "required": true,
+            "name": "period"
+          },
+          {
+            "titles": "Resolution",
+            "required": true,
+            "name": "resolution"
+          },
+          {
+            "titles": "Value",
+            "required": true,
+            "name": "value"
+          },
+          {
+            "titles": "Measure Type",
+            "required": true,
+            "name": "measure_type"
+          },
+          {
+            "titles": "Unit",
+            "required": true,
+            "name": "unit"
           }
-        }, {
-          "columnReference": "applicationCategory",
-          "reference": {
-            "resource": "out/ho-application-categories.csv",
-            "columnReference": "label"
+        ],
+        "foreignKeys": [
+          {
+            "columnReference": "applicant_type",
+            "reference": {
+              "resource": "https://ons-opendata.github.io/ref_migration/codelists/ho-applicant-types.csv",
+              "columnReference": "notation"
+            }
+          },
+          {
+            "columnReference": "application_type",
+            "reference": {
+              "resource": "https://ons-opendata.github.io/ref_migration/codelists/ho-application-types.csv",
+              "columnReference": "notation"
+            }
+          },
+          {
+            "columnReference": "ho_country_of_nationality",
+            "reference": {
+              "resource": "https://ons-opendata.github.io/ref_migration/codelists/ho-country-of-nationality.csv",
+              "columnReference": "notation"
+            }
+          },
+          {
+            "columnReference": "resolution",
+            "reference": {
+              "resource": "https://ons-opendata.github.io/ref_migration/codelists/ho-application-resolution.csv",
+              "columnReference": "notation"
+            }
           }
-        }]
+        ],
+        "primaryKey": [
+          "applicant_type",
+          "application_category",
+          "application_type",
+          "ho_country_of_nationality",
+          "period",
+          "resolution",
+          "measure_type",
+          "unit"
+        ]
       }
     }
   ]

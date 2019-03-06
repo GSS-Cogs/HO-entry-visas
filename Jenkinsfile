@@ -42,9 +42,7 @@ pipeline {
             steps {
                 script {
                     jobDraft.replace()
-                    uploadCodelist('out/ho-application-categories.csv', 'HO Application Category')
-                    uploadCodelist('out/ho-countries.csv', 'HO Citizenship')
-                    uploadTidy(['out/entry_visas.csv'],
+                    uploadTidy(['out/observations.csv'],
                                'https://github.com/ONS-OpenData/ref_migration/raw/master/columns.csv')
                 }
             }
