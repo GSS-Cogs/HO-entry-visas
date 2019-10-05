@@ -8,19 +8,19 @@
   "tables": [
     {
       "url": "https://gss-cogs.github.io/ref_migration/codelists/ho-applicant-types.csv",
-      "tableSchema": "https://ons-opendata.github.io/ref_common/codelist-schema.json"
+      "tableSchema": "https://gss-cogs.github.io/ref_common/codelist-schema.json"
     },
     {
       "url": "https://gss-cogs.github.io/ref_migration/codelists/ho-application-types.csv",
-      "tableSchema": "https://ons-opendata.github.io/ref_common/codelist-schema.json"
+      "tableSchema": "https://gss-cogs.github.io/ref_common/codelist-schema.json"
     },
     {
       "url": "https://gss-cogs.github.io/ref_migration/codelists/ho-country-of-nationality.csv",
-      "tableSchema": "https://ons-opendata.github.io/ref_common/codelist-schema.json"
+      "tableSchema": "https://gss-cogs.github.io/ref_common/codelist-schema.json"
     },
     {
       "url": "https://gss-cogs.github.io/ref_migration/codelists/ho-application-resolution.csv",
-      "tableSchema": "https://ons-opendata.github.io/ref_common/codelist-schema.json"
+      "tableSchema": "https://gss-cogs.github.io/ref_common/codelist-schema.json"
     },
     {
       "url": "out/observations.csv",
