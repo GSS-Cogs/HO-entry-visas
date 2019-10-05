@@ -7,19 +7,19 @@
   ],
   "tables": [
     {
-      "url": "https://ons-opendata.github.io/ref_migration/codelists/ho-applicant-types.csv",
+      "url": "https://gss-cogs.github.io/ref_migration/codelists/ho-applicant-types.csv",
       "tableSchema": "https://ons-opendata.github.io/ref_common/codelist-schema.json"
     },
     {
-      "url": "https://ons-opendata.github.io/ref_migration/codelists/ho-application-types.csv",
+      "url": "https://gss-cogs.github.io/ref_migration/codelists/ho-application-types.csv",
       "tableSchema": "https://ons-opendata.github.io/ref_common/codelist-schema.json"
     },
     {
-      "url": "https://ons-opendata.github.io/ref_migration/codelists/ho-country-of-nationality.csv",
+      "url": "https://gss-cogs.github.io/ref_migration/codelists/ho-country-of-nationality.csv",
       "tableSchema": "https://ons-opendata.github.io/ref_common/codelist-schema.json"
     },
     {
-      "url": "https://ons-opendata.github.io/ref_migration/codelists/ho-application-resolution.csv",
+      "url": "https://gss-cogs.github.io/ref_migration/codelists/ho-application-resolution.csv",
       "tableSchema": "https://ons-opendata.github.io/ref_common/codelist-schema.json"
     },
     {
@@ -76,28 +76,28 @@
           {
             "columnReference": "applicant_type",
             "reference": {
-              "resource": "https://ons-opendata.github.io/ref_migration/codelists/ho-applicant-types.csv",
+              "resource": "https://gss-cogs.github.io/ref_migration/codelists/ho-applicant-types.csv",
               "columnReference": "notation"
             }
           },
           {
             "columnReference": "application_type",
             "reference": {
-              "resource": "https://ons-opendata.github.io/ref_migration/codelists/ho-application-types.csv",
+              "resource": "https://gss-cogs.github.io/ref_migration/codelists/ho-application-types.csv",
               "columnReference": "notation"
             }
           },
           {
             "columnReference": "ho_country_of_nationality",
             "reference": {
-              "resource": "https://ons-opendata.github.io/ref_migration/codelists/ho-country-of-nationality.csv",
+              "resource": "https://gss-cogs.github.io/ref_migration/codelists/ho-country-of-nationality.csv",
               "columnReference": "notation"
             }
           },
           {
             "columnReference": "resolution",
             "reference": {
-              "resource": "https://ons-opendata.github.io/ref_migration/codelists/ho-application-resolution.csv",
+              "resource": "https://gss-cogs.github.io/ref_migration/codelists/ho-application-resolution.csv",
               "columnReference": "notation"
             }
           }
