@@ -1,7 +1,7 @@
 # ---
 # jupyter:
 #   jupytext:
-#     formats: ipynb,py
+#     formats: ipynb,py:light
 #     text_representation:
 #       extension: .py
 #       format_name: light
@@ -65,6 +65,9 @@ scraper.dataset.theme = THEME['population']
 
 with open(out / 'dataset.trig', 'wb') as metadata:
     metadata.write(scraper.generate_trig())
+    
+csvw = CSVWMetadata('https://gss-cogs.github.io/ref_migration/')
+csvw.create(destinationFolder / 'observations.csv', destinationFolder / 'observations.csv-schema.json')
 # -
 
 
